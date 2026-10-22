@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Layout — Grid, Container, Responsive
+   ========================================================================== */
+
+.container {
+  width: min(var(--container-max), 100% - var(--container-padding) * 2);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--space-4xl);
+}
+
+.section--alt {
+  background-color: var(--color-bg-alt);
+}
+
+/* --- Responsive Grid Utilities --- */
+.grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
+}
+
+.grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+.grid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+/* --- Flex Utilities --- */
+.flex {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.flex--center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex--between {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex--column {
+  flex-direction: column;
+}
+
+/* --- Section Header --- */
+.section__header {
+  text-align: center;
+  margin-block-end: var(--space-3xl);
+}
+
+.section__title {
+  font-size: var(--fs-h2);
+  color: var(--color-text);
+  margin-block-end: var(--space-md);
+}
+
+.section__subtitle {
+  font-size: var(--fs-body);
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* --- Visually Hidden (accessibility) --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+

@@ -1,0 +1,13 @@
+/* ==========================================================================
+   MAIN CSS — Tổng hợp tất cả file CSS theo đúng thứ tự
+   ========================================================================== */
+@import url(./components/Buttons.css);
+@import url(./components/header.css);
+@import url(./components/HeroComponent.css);
+@import url(./components/ServicesComponent.css);
+@import url(./components/BentoGridComponent.css);
+@import url(./components/PricingComponent.css);
+@import url(./components/GalleryComponent.css);
+@import url(./components/Booking.css);
+@import url(./components/FooterComponent.css);
+@import url(./components/FloatingQuickContact.css);

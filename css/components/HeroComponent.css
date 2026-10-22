@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Hero Component (Split Hero Style)
+   ========================================================================== */
+
+.hero {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding-block-start: calc(var(--space-4xl) + 40px);
+  padding-block-end: var(--space-3xl);
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(108, 99, 255, 0.08) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(255, 107, 157, 0.06) 0%,
+      transparent 50%
+    ),
+    var(--color-bg);
+}
+
+.hero__grid {
+  align-items: center;
+  gap: var(--space-3xl);
+}
+
+/* Cột 1: Chữ */
+.hero__title {
+  font-size: var(--fs-h1);
+  letter-spacing: -0.02em;
+  margin-block-end: var(--space-md);
+}
+
+.hero__subtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-block-end: var(--space-xl);
+  max-width: 520px;
+}
+
+.hero__actions {
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-block-end: var(--space-2xl);
+}
+
+/* Cam kết thực tế của tiệm */
+.hero__commitments {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-block-start: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.commitment-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  color: var(--color-text-light);
+}
+
+.commitment-item strong {
+  color: var(--color-text);
+}
+
+.commitment-icon {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+/* Cột 2: Ảnh & Floating Card */
+.hero__media {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__image-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: visible;
+  max-width: 480px;
+  width: 100%;
+}
+
+.hero__image {
+  width: 100%;
+  aspect-ratio: 4 / 3.8;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Thẻ nổi trang trí trên ảnh */
+.hero__float-badge {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.badge-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-text strong {
+  font-size: var(--fs-small);
+  color: var(--color-text);
+}
+
+.badge-text span {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+/* Responsive cho Hero trên màn hình nhỏ */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-block-start: calc(var(--space-4xl) + 20px);
+  }
+
+  .hero__float-badge {
+    left: 10px;
+    bottom: -15px;
+    padding: var(--space-sm) var(--space-md);
+  }
+}

@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Design Tokens — Pet Spa & Grooming
+   Cập nhật khi có brand guideline từ khách hàng
+   ========================================================================== */
+
+:root {
+  /* --- Colors (placeholder — sẽ cập nhật theo brand) --- */
+  --color-primary: #6C63FF;
+  --color-primary-light: #8B83FF;
+  --color-primary-dark: #4A42D4;
+  --color-secondary: #FF6B9D;
+  --color-accent: #FFD93D;
+
+  --color-text: #2D3436;
+  --color-text-light: #636E72;
+  --color-text-inverse: #FFFFFF;
+
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F8F9FA;
+  --color-bg-dark: #2D3436;
+
+  --color-border: #DFE6E9;
+  --color-success: #00B894;
+  --color-error: #E17055;
+
+  /* --- Typography --- */
+  --font-heading: 'Nunito', system-ui, sans-serif;
+  --font-body: 'Open Sans', system-ui, sans-serif;
+
+  --fs-h1: clamp(2rem, 5vw, 3.5rem);
+  --fs-h2: clamp(1.5rem, 3.5vw, 2.5rem);
+  --fs-h3: clamp(1.25rem, 2.5vw, 1.75rem);
+  --fs-body: clamp(1rem, 1.5vw, 1.125rem);
+  --fs-small: 0.875rem;
+
+  --fw-regular: 400;
+  --fw-medium: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+
+  --line-height: 1.6;
+
+  /* --- Spacing --- */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+  /* --- Layout --- */
+  --container-max: 1200px;
+  --container-padding: var(--space-lg);
+
+  /* --- Border Radius --- */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
+
+  /* --- Transitions --- */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* --- Z-Index Scale --- */
+  --z-header: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+}
+

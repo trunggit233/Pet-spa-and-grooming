@@ -1,0 +1,221 @@
+/* ==========================================================================
+   Footer Component with Integrated Google Maps
+   ========================================================================== */
+
+.footer {
+  background-color: var(--color-bg-dark);
+  color: #ffffff;
+  padding-block-start: var(--space-4xl);
+  padding-block-end: var(--space-2xl);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 1.1fr 1.4fr;
+  gap: var(--space-2xl);
+  margin-block-end: var(--space-3xl);
+}
+
+/* --- Cột 1: Thương hiệu --- */
+.footer__logo {
+  font-size: 1.4rem;
+  font-weight: var(--fw-bold);
+  color: #ffffff;
+  margin-block-end: var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.footer__desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.6;
+  margin-block-end: var(--space-lg);
+  max-width: 320px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.social-link {
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: var(--fw-medium);
+  color: #ffffff;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.social-link:hover {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* --- Tiêu Đề Cột --- */
+.footer__heading {
+  font-size: 1.1rem;
+  font-weight: var(--fw-bold);
+  color: #ffffff;
+  margin-block-end: var(--space-lg);
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.footer__heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+/* --- Cột 2: Liên kết nhanh --- */
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.875rem;
+}
+
+.footer__links a {
+  color: rgba(255, 255, 255, 0.72);
+  transition:
+    color var(--transition-fast),
+    padding-left var(--transition-fast);
+  display: inline-block;
+}
+
+.footer__links a:hover {
+  color: #ffffff;
+  padding-left: 6px;
+}
+
+/* --- Cột 3: Giờ làm việc & Liên hệ --- */
+.footer__contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  font-size: 0.875rem;
+}
+
+.footer__contact-info li {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+.footer__contact-info .icon {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+
+.footer__contact-info strong {
+  display: block;
+  color: #ffffff;
+  font-size: 0.825rem;
+}
+
+.footer__contact-info p {
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.footer__contact-info a {
+  color: var(--color-primary-light);
+  font-weight: var(--fw-bold);
+}
+
+/* --- Cột 4: Google Maps Tích Hợp --- */
+.footer__map-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__map-wrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  margin-block-end: var(--space-sm);
+  background-color: #2f3542;
+}
+
+.footer__map-wrapper iframe {
+  display: block;
+  width: 100%;
+}
+
+.footer__map-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: var(--fw-medium);
+  color: rgba(255, 255, 255, 0.88);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.footer__map-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.footer__map-btn .ext-icon {
+  font-size: 0.9rem;
+}
+
+/* --- Dòng Bản Quyền Cuối Cùng (Bottom Bar) --- */
+.footer__bottom {
+  padding-top: var(--space-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.55);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.footer__tagline {
+  color: rgba(255, 255, 255, 0.75);
+  font-style: italic;
+}
+
+/* Responsive cho Footer */
+@media (max-width: 1024px) {
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-xs);
+  }
+}

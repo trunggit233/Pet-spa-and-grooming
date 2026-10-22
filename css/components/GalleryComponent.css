@@ -1,0 +1,226 @@
+/* ==========================================================================
+   Gallery Component (Polaroid / Scrapbook Collage Style)
+   ========================================================================== */
+
+.gallery-section {
+  background-color: var(--color-bg);
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.08) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 24px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-layout {
+  align-items: center;
+  gap: var(--space-3xl);
+}
+
+/* --- Cột Trái: Tiêu Đề Nghệ Thuật --- */
+.gallery__counter {
+  font-size: 0.85rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.12em;
+  color: var(--color-text-light);
+  margin-block-end: var(--space-md);
+  display: block;
+}
+
+.gallery__title {
+  margin-block-end: var(--space-lg);
+  line-height: 0.95;
+}
+
+.gallery__title-serif {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #e65100; /* Màu cam đất nghệ thuật giống mẫu */
+  font-weight: 500;
+  display: block;
+}
+
+.gallery__title-bold {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  font-weight: 900;
+  color: #e65100;
+  display: block;
+  letter-spacing: -0.02em;
+}
+
+.gallery__desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  max-width: 480px;
+  margin-block-end: var(--space-2xl);
+}
+
+/* --- Cột Phải: Dàn Ảnh Polaroid Sole (Collage) --- */
+.gallery__collage {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-sm);
+}
+
+/* Sticker Doodles */
+.doodle {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.doodle--star {
+  top: -15px;
+  left: 20px;
+  font-size: 1.8rem;
+  transform: rotate(15deg);
+}
+
+.doodle--paw {
+  top: 40%;
+  right: -20px;
+  font-size: 2.2rem;
+  transform: rotate(-25deg);
+}
+
+.doodle--spark {
+  bottom: -15px;
+  left: 25%;
+  font-size: 1.8rem;
+  transform: rotate(10deg);
+}
+
+/* Thẻ Polaroid Giấy Trắng */
+.polaroid-card {
+  background-color: #ffffff;
+  padding: 10px 10px 16px 10px;
+  border-radius: 4px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease,
+    z-index 0ms;
+}
+
+.polaroid__number {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #a4b0be;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.polaroid__img-wrapper {
+  aspect-ratio: 4 / 4.4;
+  overflow: hidden;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  background-color: #f1f2f6;
+}
+
+.polaroid__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-base);
+}
+
+.polaroid__caption {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 0.8rem;
+  font-weight: var(--fw-bold);
+  color: #57606f;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Các góc xoay và độ lệch so le tự nhiên */
+.polaroid--1 {
+  transform: rotate(-4deg);
+  margin-top: 15px;
+}
+.polaroid--2 {
+  transform: rotate(3deg);
+  margin-top: -10px;
+}
+.polaroid--3 {
+  transform: rotate(-2deg);
+  margin-top: 25px;
+}
+.polaroid--4 {
+  transform: rotate(4deg);
+  margin-top: -5px;
+}
+.polaroid--5 {
+  transform: rotate(-3deg);
+  margin-top: 15px;
+}
+.polaroid--6 {
+  transform: rotate(2deg);
+  margin-top: -15px;
+}
+
+/* Hiệu ứng tương tác: Xoay thẳng, phóng to và nổi lên trên cùng */
+.polaroid-card:hover {
+  transform: rotate(0deg) scale(1.12);
+  z-index: 10;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+}
+
+.polaroid-card:hover .polaroid__img {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .gallery-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .gallery__content {
+    text-align: center;
+  }
+
+  .gallery__desc {
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery__collage {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .polaroid--1,
+  .polaroid--2,
+  .polaroid--3,
+  .polaroid--4,
+  .polaroid--5,
+  .polaroid--6 {
+    margin-top: 0;
+  }
+
+  .polaroid-card:hover {
+    transform: scale(1.06);
+  }
+}

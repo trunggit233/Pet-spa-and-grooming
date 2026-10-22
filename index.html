@@ -1,0 +1,1107 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dịch vụ Spa & Grooming thú cưng chuyên nghiệp — Tắm, cắt tỉa, chăm sóc lông cho chó mèo"
+    />
+
+    <!-- Open Graph (sẽ cập nhật khi có thông tin khách hàng) -->
+    <meta property="og:title" content="Pet Spa & Grooming" />
+    <meta
+      property="og:description"
+      content="Dịch vụ Spa & Grooming thú cưng chuyên nghiệp"
+    />
+    <meta property="og:type" content="website" />
+
+    <title>PawCare Grooming — Chăm sóc thú cưng chuyên nghiệp</title>
+
+    <!-- Google Fonts (placeholder — sẽ chọn font phù hợp brand) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="top">
+      <div class="container flex flex--between">
+        <a href="/" class="header__logo" aria-label="Trang chủ">
+          <!-- Logo sẽ được thêm sau -->
+          🐾 <strong>PawCare Grooming</strong>
+        </a>
+
+        <button
+          class="header__menu-toggle"
+          aria-label="Mở menu"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span></span>
+        </button>
+
+        <nav class="header__nav" id="main-nav" data-open="false">
+          <ul class="header__menu">
+            <li><a href="#services">Dịch vụ</a></li>
+            <li><a href="#why-us">Tại sao chọn chúng tôi</a></li>
+            <li><a href="#pricing">Bảng giá</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li>
+              <a href="#contact" class="btn btn--primary">Đặt lịch ngay</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== HERO ===== -->
+      <section class="hero section" id="hero">
+        <div class="container">
+          <div class="hero__grid grid grid--2">
+            <!-- Cột 1: Nội dung chữ & Kêu gọi hành động -->
+            <div class="hero__content">
+              <h1 class="hero__title">
+                Grooming nhẹ nhàng, <br />an toàn cho bé yêu 🐾
+              </h1>
+              <p class="hero__subtitle">
+                Chúng tôi hiểu mỗi bé cưng có một tính cách riêng. Tiệm luôn
+                kiên nhẫn vỗ về những bé nhút nhát, sợ người lạ và đặt tiêu
+                chuẩn vệ sinh, khử khuẩn lên hàng đầu để bạn hoàn toàn an tâm
+                gửi gắm.
+              </p>
+              <div class="hero__actions flex">
+                <a href="#contact" class="btn btn--primary btn--large"
+                  >Đặt lịch ngay</a
+                >
+                <a href="#services" class="btn btn--secondary btn--large"
+                  >Xem dịch vụ</a
+                >
+              </div>
+
+              <!-- Cam kết thực tế của tiệm (thay thế cho chỉ số số ảo) -->
+              <div class="hero__commitments">
+                <div class="commitment-item">
+                  <span class="commitment-icon">🧼</span>
+                  <div>
+                    <strong>Khử khuẩn & Vệ sinh nghiêm ngặt:</strong> Tiệt trùng
+                    dụng cụ và bàn spa sau mỗi bé để tránh lây nhiễm chéo.
+                  </div>
+                </div>
+                <div class="commitment-item">
+                  <span class="commitment-icon">🧸</span>
+                  <div>
+                    <strong>Phương pháp kiên nhẫn, không ép buộc:</strong> Dành
+                    thời gian làm quen và nhẹ nhàng trấn an các bé sợ người lạ.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cột 2: Hình ảnh thú cưng nổi bật -->
+            <div class="hero__media">
+              <div class="hero__image-card">
+                <!-- Dùng ảnh chất lượng cao mẫu Unsplash, fetchpriority="high" cho LCP -->
+                <img
+                  src="/assets/images/pets.jpg"
+                  alt="Bé cún thư giãn được spa chăm sóc nhẹ nhàng"
+                  class="hero__image"
+                  fetchpriority="high"
+                  width="600"
+                  height="500"
+                />
+
+                <!-- Thẻ nổi truyền tải thông điệp an tâm -->
+                <div class="hero__float-badge">
+                  <span class="badge-icon">❤️</span>
+                  <div class="badge-text">
+                    <strong>Chăm sóc kiên nhẫn</strong>
+                    <span>Vỗ về từng bé nhút nhát</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SERVICES ===== -->
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section__header animate-on-scroll">
+            <h2 class="section__title">Dịch vụ chăm sóc bé yêu</h2>
+            <p class="section__subtitle">
+              Quy trình tỉ mỉ, khử khuẩn nghiêm ngặt và sự kiên nhẫn tối đa dành
+              cho từng bé cưng
+            </p>
+          </div>
+
+          <div class="grid grid--4 animate-stagger">
+            <!-- Dịch vụ 1 -->
+            <div class="service-card">
+              <div class="service-card__img-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=600&q=80"
+                  alt="Dịch vụ tắm và sấy lông dịu nhẹ cho thú cưng"
+                  class="service-card__img"
+                  loading="lazy"
+                  width="400"
+                  height="250"
+                />
+              </div>
+              <h3 class="service-card__title">Tắm & Sấy Dịu Nhẹ</h3>
+              <p class="service-card__desc">
+                Sử dụng nước ấm điều nhiệt và sữa tắm dịu nhẹ da lông. Máy sấy
+                chuyên dụng giảm âm giúp bé không bị giật mình hay căng thẳng.
+              </p>
+              <ul class="service-card__features">
+                <li>
+                  <span class="check-icon">✓</span> Nước ấm thư giãn chuẩn nhiệt
+                  độ
+                </li>
+                <li>
+                  <span class="check-icon">✓</span> Sấy êm, hạn chế tối đa tiếng
+                  ồn
+                </li>
+                <li>
+                  <span class="check-icon">✓</span> Khăn lau riêng tiệt trùng
+                  100%
+                </li>
+              </ul>
+            </div>
+
+            <!-- Dịch vụ 2 -->
+            <div class="service-card">
+              <div class="service-card__img-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=600&q=80"
+                  alt="Cắt tỉa lông tạo kiểu chuyên nghiệp cho thú cưng"
+                  class="service-card__img"
+                  loading="lazy"
+                  width="400"
+                  height="250"
+                />
+              </div>
+              <h3 class="service-card__title">Cắt Tỉa Tạo Kiểu</h3>
+              <p class="service-card__desc">
+                Tư vấn form dáng tôn vẻ đáng yêu của bé. Chuyên viên nhẹ nhàng,
+                kiên nhẫn dừng lại vỗ về khi bé thấy mỏi hoặc bồn chồn.
+              </p>
+              <ul class="service-card__features">
+                <li>
+                  <span class="check-icon">✓</span> Cắt tỉa theo mong muốn của
+                  Sen
+                </li>
+                <li>
+                  <span class="check-icon">✓</span> Kéo & tông-đơ khử khuẩn sau
+                  mỗi ca
+                </li>
+                <li>
+                  <span class="check-icon">✓</span> Thao tác từ tốn, không ép
+                  buộc
+                </li>
+              </ul>
+            </div>
+
+            <!-- Dịch vụ 3 -->
+            <div class="service-card">
+              <div class="service-card__img-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80"
+                  alt="Vệ sinh tai và cắt mài móng an toàn cho chó mèo"
+                  class="service-card__img"
+                  loading="lazy"
+                  width="400"
+                  height="250"
+                />
+              </div>
+              <h3 class="service-card__title">Vệ Sinh Tai & Cắt Móng</h3>
+              <p class="service-card__desc">
+                Cắt tỉa cẩn thận kết hợp mài mịn đầu móng để bé không cào xước.
+                Vệ sinh tai sạch sâu bằng dung dịch chuyên dụng không gây buốt
+                rát.
+              </p>
+              <ul class="service-card__features">
+                <li>
+                  <span class="check-icon">✓</span> Mài mịn bo tròn đầu móng
+                </li>
+                <li>
+                  <span class="check-icon">✓</span> Tuyệt đối không cắt phạm tủy
+                </li>
+                <li>
+                  <span class="check-icon">✓</span> Làm sạch tai nhẹ nhàng, êm
+                  ái
+                </li>
+              </ul>
+            </div>
+
+            <!-- Dịch vụ 4 -->
+            <div class="service-card">
+              <div class="service-card__img-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80"
+                  alt="Chải gỡ rối lông và xịt dưỡng tơi bồng cho thú cưng"
+                  class="service-card__img"
+                  loading="lazy"
+                  width="400"
+                  height="250"
+                />
+              </div>
+              <h3 class="service-card__title">Gỡ Rối & Dưỡng Lông</h3>
+              <p class="service-card__desc">
+                Kỹ thuật gỡ rối tỉ mỉ kết hợp xịt dưỡng làm mềm lông, hạn chế
+                tối đa việc phải cạo bỏ lông hay làm đau rát bề mặt da của bé.
+              </p>
+              <ul class="service-card__features">
+                <li>
+                  <span class="check-icon">✓</span> Giữ tối đa bộ lông tự nhiên
+                </li>
+                <li>
+                  <span class="check-icon">✓</span> Xịt dưỡng lông tơi bồng,
+                  bóng mượt
+                </li>
+                <li>
+                  <span class="check-icon">✓</span> Không làm đau rát da bé
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== WHY US ===== -->
+      <section class="section" id="why-us">
+        <div class="container">
+          <div class="section__header animate-on-scroll">
+            <h2 class="section__title">Vì sao Sen an tâm gửi bé tại tiệm?</h2>
+            <p class="section__subtitle">
+              Không chỉ là làm đẹp, chúng tôi đặt sự an toàn, vệ sinh và cảm xúc
+              của các bé lên hàng đầu
+            </p>
+          </div>
+
+          <!-- Bento Grid Layout -->
+          <div class="bento-grid animate-on-scroll">
+            <!-- Thẻ 1: Cao dọc bên trái (Chiếm 2 hàng) -->
+            <div class="bento-card bento-card--tall">
+              <div class="bento-card__img-wrapper">
+                <img
+                  src="/assets/images/staffandpet.jpg"
+                  alt="Chuyên viên kiên nhẫn vỗ về bé nhát người"
+                  class="bento-card__img"
+                  loading="lazy"
+                  width="500"
+                  height="400"
+                />
+              </div>
+              <div class="bento-card__content">
+                <span class="bento-tag">🧸 Phương Pháp Fear-Free</span>
+                <h3 class="bento-card__title">
+                  Kiên nhẫn dỗ dành từng bé nhút nhát
+                </h3>
+                <p class="bento-card__text">
+                  Tuyệt đối không ép buộc hay quát mắng. Nhân viên dành thời
+                  gian làm quen và nhẹ nhàng trấn an để các bé sợ người lạ luôn
+                  cảm thấy an toàn như ở nhà.
+                </p>
+                <a href="#contact" class="bento-btn"
+                  >Tìm hiểu cách chúng tôi chăm sóc →</a
+                >
+              </div>
+            </div>
+
+            <!-- Thẻ 2: Giữa trên -->
+            <div class="bento-card bento-card--medium">
+              <div class="bento-card__img-wrapper">
+                <img
+                  src="/assets/images/dogpet.jpg"
+                  alt="Dụng cụ grooming được khử trùng y tế"
+                  class="bento-card__img"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </div>
+              <div class="bento-card__content">
+                <h3 class="bento-card__title">Khử trùng y tế</h3>
+                <p class="bento-card__text">
+                  Tiệt trùng kéo, tông-đơ, chậu tắm và bàn grooming sau mỗi bé.
+                  Nói không với nguy cơ lây chéo nấm da hay ve rận.
+                </p>
+              </div>
+            </div>
+
+            <!-- Thẻ 3: Phải trên (Thẻ nhấn mạnh chỉ số) -->
+            <div class="bento-card bento-card--small">
+              <div class="bento-stat">
+                <span class="bento-stat__badge">🌿 Lành Tính</span>
+              </div>
+              <div class="bento-card__content">
+                <h3 class="bento-card__title">Sữa tắm hữu cơ dịu nhẹ</h3>
+                <p class="bento-card__text">
+                  Chiết xuất thảo mộc tự nhiên, độ pH chuẩn y khoa cho thú cưng,
+                  không cay mắt và bảo vệ da lông nhạy cảm.
+                </p>
+              </div>
+            </div>
+
+            <!-- Thẻ 4: Rộng ngang bên dưới (Chiếm 2 cột) -->
+            <div class="bento-card bento-card--wide">
+              <div class="bento-card__content">
+                <span class="bento-tag">📸 Minh Bạch Quy Trình</span>
+                <h3 class="bento-card__title">
+                  Cập nhật video & hình ảnh liên tục cho Sen
+                </h3>
+                <p class="bento-card__text">
+                  Không gian spa mở sạch sẽ. Đội ngũ sẵn sàng quay video, chụp
+                  ảnh quá trình làm để bạn hoàn toàn an tâm theo dõi tình trạng
+                  của bé dù đang bận đi làm hay ở xa.
+                </p>
+              </div>
+              <div class="bento-card__img-wrapper">
+                <img
+                  src="/assets/images/pets.jpg"
+                  alt="Bé cún vui vẻ sau khi được chăm sóc tại spa"
+                  class="bento-card__img"
+                  loading="lazy"
+                  width="450"
+                  height="300"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PRICING ===== -->
+      <section class="section section--alt" id="pricing">
+        <div class="container">
+          <div class="section__header animate-on-scroll">
+            <h2 class="section__title">Bảng giá dịch vụ</h2>
+            <p class="section__subtitle">
+              Giá cả rõ ràng, minh bạch theo từng gói chăm sóc trọn gói cho bé
+            </p>
+          </div>
+
+          <!-- Bảng giá 4 thẻ dạng 2x2 theo phong cách mẫu -->
+          <div class="pricing-grid animate-on-scroll">
+            <!-- Thẻ 1: Thẻ Giới Thiệu / Cover Card (Nền ấm) -->
+            <div class="pricing-card pricing-card--intro">
+              <div class="pricing-card__intro-header">
+                <span class="intro-pill">BẢNG GIÁ</span>
+                <p class="intro-subtitle">Dành cho mọi giống chó và mèo</p>
+              </div>
+              <div class="pricing-card__intro-media">
+                <img
+                  src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=600&q=80"
+                  alt="Dịch vụ grooming chuyên nghiệp cho mọi giống thú cưng"
+                  class="pricing-intro-img"
+                  loading="lazy"
+                  width="450"
+                  height="350"
+                />
+              </div>
+              <a href="#contact" class="pricing-intro-btn">
+                <span>Tư vấn chọn gói cho bé</span>
+                <span class="arrow-icon">→</span>
+              </a>
+            </div>
+
+            <!-- Thẻ 2: Gói Vệ Sinh Tiêu Chuẩn -->
+            <div class="pricing-card">
+              <div class="pricing-card__head">
+                <div class="pricing-card__title-group">
+                  <h3 class="pricing-card__title">Vệ Sinh Tiêu Chuẩn</h3>
+                  <span class="paw-icon">🐾</span>
+                </div>
+                <p class="pricing-card__tagline">
+                  Nhanh gọn, thoải mái cho bé mỗi tuần
+                </p>
+              </div>
+
+              <div class="pricing-card__body">
+                <div class="pricing-card__info">
+                  <p class="pricing-card__includes-label">Gói bao gồm:</p>
+                  <ul class="pricing-card__list">
+                    <li>Tắm thảo mộc nước ấm điều nhiệt</li>
+                    <li>Sấy êm ái, chống sốc tiếng ồn</li>
+                    <li>Cắt mài mịn móng chân</li>
+                    <li>Vệ sinh tai khử khuẩn dịu nhẹ</li>
+                    <li>Vệ sinh mắt & cạo sạch lông bàn chân</li>
+                  </ul>
+                </div>
+
+                <div class="pricing-card__pet-badge">
+                  <img
+                    src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=400&q=80"
+                    alt="Bé cún được tắm vệ sinh thơm tho"
+                    class="pricing-pet-img"
+                    loading="lazy"
+                    width="160"
+                    height="160"
+                  />
+                </div>
+              </div>
+
+              <div class="pricing-card__footer">
+                <div class="pricing-badge">
+                  <span class="pricing-badge__sub">Chỉ từ</span>
+                  <span class="pricing-badge__price">150.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thẻ 3: Gói Cắt Tỉa Toàn Diện -->
+            <div class="pricing-card">
+              <div class="pricing-card__head">
+                <div class="pricing-card__title-group">
+                  <h3 class="pricing-card__title">Cắt Tỉa Toàn Diện</h3>
+                  <span class="paw-icon">✂️</span>
+                </div>
+                <p class="pricing-card__tagline">
+                  Chăm sóc sắc đẹp chuyên sâu chuẩn form
+                </p>
+              </div>
+
+              <div class="pricing-card__body">
+                <div class="pricing-card__info">
+                  <p class="pricing-card__includes-label">Gói bao gồm:</p>
+                  <ul class="pricing-card__list">
+                    <li>Toàn bộ bước của Gói Vệ Sinh</li>
+                    <li>Cắt tỉa tạo kiểu theo yêu cầu</li>
+                    <li>Chải tơi & gỡ rối lông chuyên nghiệp</li>
+                    <li>Sấy tạo phom lông bồng bềnh</li>
+                    <li>Vắt tuyến hôi & xịt dưỡng hữu cơ</li>
+                  </ul>
+                </div>
+
+                <div class="pricing-card__pet-badge">
+                  <img
+                    src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=400&q=80"
+                    alt="Bé cún sau khi cắt tỉa tạo kiểu bồng bềnh"
+                    class="pricing-pet-img"
+                    loading="lazy"
+                    width="160"
+                    height="160"
+                  />
+                </div>
+              </div>
+
+              <div class="pricing-card__footer">
+                <div class="pricing-badge pricing-badge--featured">
+                  <span class="pricing-badge__sub">Chỉ từ</span>
+                  <span class="pricing-badge__price">280.000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thẻ 4: Gói Tắm Spa Phục Hồi -->
+            <div class="pricing-card">
+              <div class="pricing-card__head">
+                <div class="pricing-card__title-group">
+                  <h3 class="pricing-card__title">Spa Phục Hồi Lông</h3>
+                  <span class="paw-icon">🧼</span>
+                </div>
+                <p class="pricing-card__tagline">
+                  Liệu trình làm mềm lông & thư giãn cơ thể
+                </p>
+              </div>
+
+              <div class="pricing-card__body">
+                <div class="pricing-card__info">
+                  <p class="pricing-card__includes-label">Gói bao gồm:</p>
+                  <ul class="pricing-card__list">
+                    <li>Tắm ngâm bồn bọt massage thư giãn</li>
+                    <li>Dưỡng ẩm phục hồi lông xơ rối</li>
+                    <li>Vệ sinh tai & cắt mài móng</li>
+                    <li>Xịt khoáng thảo mộc kháng khuẩn</li>
+                    <li>Thưởng snack vỗ về sau khi làm</li>
+                  </ul>
+                </div>
+
+                <div class="pricing-card__pet-badge">
+                  <img
+                    src="https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=400&q=80"
+                    alt="Bé cún thư giãn sau buổi spa phục hồi"
+                    class="pricing-pet-img"
+                    loading="lazy"
+                    width="160"
+                    height="160"
+                  />
+                </div>
+              </div>
+
+              <div class="pricing-card__footer">
+                <div class="pricing-badge">
+                  <span class="pricing-badge__sub">Chỉ từ</span>
+                  <span class="pricing-badge__price">180.000đ</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== GALLERY (Scrapbook / Polaroid Collage Style) ===== -->
+      <section class="gallery-section section" id="gallery">
+        <div class="container">
+          <div class="gallery-layout grid grid--2">
+            <!-- Cột trái: Tiêu đề nghệ thuật & Mô tả -->
+            <div class="gallery__content animate-on-scroll">
+              <span class="gallery__counter">KHOẢNH KHẮC</span>
+              <h2 class="gallery__title">
+                <span class="gallery__title-serif">Góc</span>
+                <span class="gallery__title-bold">BÉ XINH</span>
+              </h2>
+              <p class="gallery__desc">
+                Mỗi buổi spa là một hành trình nâng niu và yêu thương. Dưới đây
+                là những khoảnh khắc bồng bềnh, thơm tho và nụ cười rạng rỡ của
+                các bé cưng trong và sau quá trình chăm sóc tại tiệm.
+              </p>
+              <div class="gallery__cta">
+                <a href="#contact" class="btn btn--primary btn--large"
+                  >Đặt lịch làm đẹp cho bé</a
+                >
+              </div>
+            </div>
+
+            <!-- Cột phải: Dàn ảnh Polaroid sole nghệ thuật -->
+            <div class="gallery__collage animate-on-scroll">
+              <!-- Sticker trang trí vui nhộn -->
+              <span class="doodle doodle--star">✨</span>
+              <span class="doodle doodle--paw">🐾</span>
+              <span class="doodle doodle--spark">⚡</span>
+
+              <!-- Ảnh Polaroid 01 -->
+              <div class="polaroid-card polaroid--1">
+                <span class="polaroid__number">01</span>
+                <div class="polaroid__img-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=400&q=80"
+                    alt="Bé cún ngâm bọt xà phòng spa"
+                    class="polaroid__img"
+                    loading="lazy"
+                    width="240"
+                    height="260"
+                  />
+                </div>
+                <span class="polaroid__caption">Tắm bọt xà phòng</span>
+              </div>
+
+              <!-- Ảnh Polaroid 02 -->
+              <div class="polaroid-card polaroid--2">
+                <span class="polaroid__number">02</span>
+                <div class="polaroid__img-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=400&q=80"
+                    alt="Sấy phom lông bồng bềnh"
+                    class="polaroid__img"
+                    loading="lazy"
+                    width="240"
+                    height="260"
+                  />
+                </div>
+                <span class="polaroid__caption">Sấy bồng bềnh</span>
+              </div>
+
+              <!-- Ảnh Polaroid 03 -->
+              <div class="polaroid-card polaroid--3">
+                <span class="polaroid__number">03</span>
+                <div class="polaroid__img-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=400&q=80"
+                    alt="Cắt tỉa tạo kiểu xinh xắn"
+                    class="polaroid__img"
+                    loading="lazy"
+                    width="240"
+                    height="260"
+                  />
+                </div>
+                <span class="polaroid__caption">Cắt tỉa tạo kiểu</span>
+              </div>
+
+              <!-- Ảnh Polaroid 04 -->
+              <div class="polaroid-card polaroid--4">
+                <span class="polaroid__number">04</span>
+                <div class="polaroid__img-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=400&q=80"
+                    alt="Vệ sinh tai móng dịu êm"
+                    class="polaroid__img"
+                    loading="lazy"
+                    width="240"
+                    height="260"
+                  />
+                </div>
+                <span class="polaroid__caption">Mài móng êm ái</span>
+              </div>
+
+              <!-- Ảnh Polaroid 05 -->
+              <div class="polaroid-card polaroid--5">
+                <span class="polaroid__number">05</span>
+                <div class="polaroid__img-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=400&q=80"
+                    alt="Thư giãn trong khăn ấm"
+                    class="polaroid__img"
+                    loading="lazy"
+                    width="240"
+                    height="260"
+                  />
+                </div>
+                <span class="polaroid__caption">Quấn khăn ấm áp</span>
+              </div>
+
+              <!-- Ảnh Polaroid 06 -->
+              <div class="polaroid-card polaroid--6">
+                <span class="polaroid__number">06</span>
+                <div class="polaroid__img-wrapper">
+                  <img
+                    src="https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=400&q=80"
+                    alt="Nụ cười tươi sau khi làm đẹp"
+                    class="polaroid__img"
+                    loading="lazy"
+                    width="240"
+                    height="260"
+                  />
+                </div>
+                <span class="polaroid__caption">Hoàn thiện rạng rỡ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CONTACT / BOOKING (Pet Profile & Smart Booking) ===== -->
+      <section class="section section--alt" id="contact">
+        <div class="container">
+          <div class="section__header animate-on-scroll">
+            <h2 class="section__title">Đặt lịch chăm sóc bé</h2>
+            <p class="section__subtitle">
+              Chia sẻ đôi điều về bé cưng để chuyên viên chuẩn bị sự chăm sóc
+              chu đáo và phù hợp nhất
+            </p>
+          </div>
+
+          <!-- Khung đặt lịch chia đôi hiện đại lấy cảm hứng từ Pet Profile Form -->
+          <div class="booking-wrapper animate-on-scroll">
+            <!-- Cột trái: Hình ảnh & Thông tin liên hệ nhanh của tiệm -->
+            <div class="booking-sidebar">
+              <div class="booking-sidebar__media">
+                <img
+                  src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=600&q=80"
+                  alt="Bé cún thư giãn tại spa"
+                  class="booking-sidebar__img"
+                  loading="lazy"
+                  width="400"
+                  height="300"
+                />
+              </div>
+
+              <div class="booking-sidebar__info">
+                <h3 class="booking-sidebar__title">Thông tin tiệm</h3>
+                <ul class="booking-contact-list">
+                  <li>
+                    <span class="contact-icon">📍</span>
+                    <div>
+                      <strong>Địa chỉ:</strong>
+                      <p>123 Đường Thú Cưng, Quận 1, TP. Hồ Chí Minh</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="contact-icon">📞</span>
+                    <div>
+                      <strong>Hotline / Zalo:</strong>
+                      <p>
+                        <a href="tel:0912345678">0912 345 678</a> (Tư vấn 24/7)
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="contact-icon">⏰</span>
+                    <div>
+                      <strong>Giờ mở cửa:</strong>
+                      <p>08:30 – 19:30 (Tất cả các ngày trong tuần)</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Cột phải: Form tương tác hồ sơ bé cưng -->
+            <div class="booking-form-area">
+              <div class="form-header">
+                <h3 class="form-header__title">Hồ sơ bé cưng & Lịch hẹn 🐾</h3>
+                <p class="form-header__desc">
+                  Để lại thông tin, tiệm sẽ liên hệ xác nhận nhé!
+                </p>
+              </div>
+
+              <form class="booking-form" novalidate>
+                <!-- 1. Chọn loại thú cưng (Radio Pills) -->
+                <div class="form-group">
+                  <label class="form-label">Bé là:</label>
+                  <div class="radio-pill-group">
+                    <label class="radio-pill">
+                      <input type="radio" name="petType" value="dog" checked />
+                      <span class="pill-btn">Chó</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="petType" value="cat" />
+                      <span class="pill-btn">Mèo</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- 2. Thông tin tên bé & giống loài -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="petName" class="form-label">Tên của bé</label>
+                    <input
+                      type="text"
+                      id="petName"
+                      name="petName"
+                      placeholder="Ví dụ: Bé Bơ, Miu..."
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="petBreed" class="form-label">Giống loài</label>
+                    <input
+                      type="text"
+                      id="petBreed"
+                      name="petBreed"
+                      placeholder="Poodle, Corgi, Mèo ta..."
+                    />
+                  </div>
+                </div>
+
+                <!-- 3. Cân nặng của bé (Segmented Pills giống ảnh mẫu) -->
+                <div class="form-group">
+                  <label class="form-label">Cân nặng ước tính:</label>
+                  <div class="radio-pill-group radio-pill-group--weight">
+                    <label class="radio-pill">
+                      <input
+                        type="radio"
+                        name="petWeight"
+                        value="under-5kg"
+                        checked
+                      />
+                      <span class="pill-btn">&lt; 5 kg</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="petWeight" value="5-10kg" />
+                      <span class="pill-btn">5 – 10 kg</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="petWeight" value="10-20kg" />
+                      <span class="pill-btn">10 – 20 kg</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="petWeight" value="over-20kg" />
+                      <span class="pill-btn">&gt; 20 kg</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- 4. Tính cách của bé (Điểm chạm đắt giá nhất theo USP của shop) -->
+                <div class="form-group">
+                  <label class="form-label">Tính cách bé như thế nào?</label>
+                  <div class="radio-pill-group radio-pill-group--personality">
+                    <label class="radio-pill">
+                      <input
+                        type="radio"
+                        name="petPersonality"
+                        value="shy"
+                        checked
+                      />
+                      <span class="pill-btn">Nhút nhát / Sợ người lạ</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input
+                        type="radio"
+                        name="petPersonality"
+                        value="energetic"
+                      />
+                      <span class="pill-btn">Tăng động, thích đùa</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="petPersonality" value="calm" />
+                      <span class="pill-btn">Ngoan, hợp tác</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- 5. Gói dịch vụ mong muốn -->
+                <div class="form-group">
+                  <label for="servicePackage" class="form-label"
+                    >Gói dịch vụ muốn chọn</label
+                  >
+                  <select id="servicePackage" name="servicePackage" required>
+                    <option value="hygiene">
+                      Gói Vệ Sinh Tiêu Chuẩn (từ 150.000đ)
+                    </option>
+                    <option value="full-grooming" selected>
+                      Gói Cắt Tỉa Toàn Diện (từ 280.000đ)
+                    </option>
+                    <option value="spa-recovery">
+                      Gói Spa Phục Hồi Lông (từ 180.000đ)
+                    </option>
+                    <option value="consult">
+                      Chưa rõ, cần tiệm tư vấn gói phù hợp
+                    </option>
+                  </select>
+                </div>
+
+                <!-- 6. Thông tin liên hệ của Sen & Ngày hẹn -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="ownerName" class="form-label"
+                      >Tên của Sen</label
+                    >
+                    <input
+                      type="text"
+                      id="ownerName"
+                      name="ownerName"
+                      placeholder="Họ và tên bạn"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="ownerPhone" class="form-label"
+                      >Số điện thoại / Zalo</label
+                    >
+                    <input
+                      type="tel"
+                      id="ownerPhone"
+                      name="ownerPhone"
+                      placeholder="0912 345 678"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- 7. Ghi chú thêm (nếu có) -->
+                <div class="form-group">
+                  <label for="bookingNote" class="form-label"
+                    >Ghi chú thêm cho chuyên viên</label
+                  >
+                  <textarea
+                    id="bookingNote"
+                    name="bookingNote"
+                    rows="2"
+                    placeholder="Bé có vết thương cũ, dị ứng gì, hoặc giờ giấc mong muốn..."
+                  ></textarea>
+                </div>
+
+                <!-- Nút Submit -->
+                <button
+                  type="submit"
+                  class="btn btn--primary btn--large booking-submit-btn"
+                >
+                  🐾 Xác nhận đặt lịch cho bé
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <!-- Cột 1: Thông tin thương hiệu & Giới thiệu -->
+          <div class="footer__col footer__brand">
+            <a href="#top" class="footer__logo">
+              🐾 <strong>Pet Spa</strong>
+            </a>
+            <p class="footer__desc">
+              Không gian spa & grooming chuyên nghiệp chuẩn an toàn, vệ sinh
+              tiệt trùng và kiên nhẫn vỗ về cả những bé cưng nhút nhát nhất.
+            </p>
+            <div class="footer__socials">
+              <a
+                href="https://www.facebook.com/lacas.trungs?locale=vi_VN"
+                class="social-link"
+                aria-label="Facebook"
+              >
+                <span>Facebook</span>
+              </a>
+              <a
+                href="https://zalo.me/0978438191"
+                class="social-link"
+                aria-label="Zalo"
+              >
+                <span>Zalo</span>
+              </a>
+              <a
+                href="https://www.tiktok.com/vi-VN/"
+                class="social-link"
+                aria-label="TikTok"
+              >
+                <span>TikTok</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Cột 2: Điều hướng nhanh -->
+          <div class="footer__col">
+            <h4 class="footer__heading">Liên kết nhanh</h4>
+            <ul class="footer__links">
+              <li><a href="#hero">Trang chủ</a></li>
+              <li><a href="#services">Dịch vụ chăm sóc</a></li>
+              <li><a href="#why-us">Vì sao chọn tiệm</a></li>
+              <li><a href="#pricing">Bảng giá minh bạch</a></li>
+              <li><a href="#gallery">Góc ảnh bé xinh</a></li>
+              <li><a href="#contact">Đặt lịch hẹn</a></li>
+            </ul>
+          </div>
+
+          <!-- Cột 3: Giờ mở cửa & Liên hệ -->
+          <div class="footer__col">
+            <h4 class="footer__heading">Giờ làm việc & Liên hệ</h4>
+            <ul class="footer__contact-info">
+              <li>
+                <span class="icon">📍</span>
+                <div>
+                  <strong>Địa chỉ:</strong>
+                  <p>123 Đường Thú Cưng, Quận 1, TP. HCM</p>
+                </div>
+              </li>
+              <li>
+                <span class="icon">📞</span>
+                <div>
+                  <strong>Hotline / Zalo:</strong>
+                  <p><a href="tel:0912345678">0912 345 678</a></p>
+                </div>
+              </li>
+              <li>
+                <span class="icon">⏰</span>
+                <div>
+                  <strong>Giờ đón khách:</strong>
+                  <p>08:30 – 19:30 (Thứ 2 – Chủ Nhật)</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Cột 4: Bản đồ Google Maps Tích hợp -->
+          <div class="footer__col footer__map-col">
+            <h4 class="footer__heading">Vị trí của tiệm</h4>
+            <div class="footer__map-wrapper">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.494668100784!2d106.6976566!3d10.7733743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f385570472f%3A0x1787491737236375!2zUXXhuq1uIDEsIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2svn!4v1710000000000!5m2!1svi!2svn"
+                width="100%"
+                height="170"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Bản đồ chỉ đường đến Pet Spa"
+              ></iframe>
+            </div>
+            <a
+              href="https://maps.google.com/?q=Pet+Spa+Quan+1+Ho+Chi+Minh"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer__map-btn"
+            >
+              <span>📍 Mở chỉ đường trên Google Maps</span>
+              <span class="ext-icon">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>&copy; 2026 Pet Spa & Grooming. Tất cả các quyền được bảo lưu.</p>
+          <p class="footer__tagline">
+            Nâng niu và yêu thương bé yêu như gia đình 🐾
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== FLOATING QUICK CONTACT BAR (Ghim cố định mép phải) ===== -->
+    <aside class="floating-contact" aria-label="Kênh liên hệ nhanh">
+      <!-- 1. Gọi Hotline -->
+      <a
+        href="tel:0912345678"
+        class="floating-btn floating-btn--phone"
+        aria-label="Gọi hotline ngay"
+      >
+        <span class="floating-btn__icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path
+              d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"
+            />
+          </svg>
+        </span>
+        <span class="floating-btn__tooltip">Gọi ngay: 0978438191</span>
+      </a>
+
+      <!-- 2. Chat Zalo -->
+      <a
+        href="https://zalo.me/0978438191"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="floating-btn floating-btn--zalo"
+        aria-label="Chat tư vấn Zalo"
+      >
+        <span class="floating-btn__icon floating-btn__zalo-text">Zalo</span>
+        <span class="floating-btn__tooltip">Chat Zalo tư vấn</span>
+      </a>
+
+      <!-- 3. Chat Messenger -->
+      <a
+        href="https://m.me/petspagrooming"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="floating-btn floating-btn--messenger"
+        aria-label="Chat Facebook Messenger"
+      >
+        <span class="floating-btn__icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.03 2 11c0 2.84 1.46 5.37 3.74 6.96V21l2.94-1.62c1.04.29 2.16.45 3.32.45 5.52 0 10-4.03 10-9s-4.48-9-10-9zm1.06 12.16l-2.58-2.75-5.04 2.75 5.55-5.89 2.65 2.75 4.97-2.75-5.55 5.89z"
+            />
+          </svg>
+        </span>
+        <span class="floating-btn__tooltip">Nhắn Messenger</span>
+      </a>
+
+      <!-- 4. Chỉ đường Google Maps -->
+      <a
+        href="https://maps.google.com/?q=Pet+Spa"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="floating-btn floating-btn--map"
+        aria-label="Chỉ đường Google Maps đến tiệm"
+      >
+        <span class="floating-btn__icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+            />
+          </svg>
+        </span>
+        <span class="floating-btn__tooltip">Chỉ đường tới tiệm</span>
+      </a>
+    </aside>
+
+    <!-- JavaScript -->
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

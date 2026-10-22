@@ -1,0 +1,211 @@
+/* ==========================================================================
+   Bento Grid Component (Why Us Section)
+   ========================================================================== */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.bento-card {
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  background-color: var(--color-bg);
+}
+
+/* Thẻ 1: Cao 2 hàng dọc */
+.bento-card--tall {
+  grid-row: span 2;
+  justify-content: space-between;
+}
+
+.bento-card--tall .bento-card__img-wrapper {
+  aspect-ratio: 4 / 3.3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-block-end: var(--space-lg);
+}
+
+/* Thẻ 2: Trung bình giữa trên */
+.bento-card--medium .bento-card__img-wrapper {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-block-end: var(--space-md);
+}
+
+/* Thẻ 3: Nhỏ với nền background ảnh thảo mộc organic & overlay */
+.bento-card--small {
+  position: relative;
+  overflow: hidden;
+  justify-content: flex-end;
+  min-height: 250px;
+  border-color: rgba(0, 184, 148, 0.2);
+}
+
+/* Lớp nền ảnh có phủ gradient mờ tối để chữ luôn sắc nét */
+.bento-card--small::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20, 28, 38, 0.25) 0%,
+      rgba(20, 28, 38, 0.88) 100%
+    ),
+    url("https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80")
+      center / cover no-repeat;
+  z-index: 1;
+  transition: transform var(--transition-base);
+}
+
+/* Hiệu ứng zoom ảnh nền khi hover */
+.bento-card--small:hover::before {
+  transform: scale(1.08);
+}
+
+/* Giữ nội dung chữ và badge luôn nổi lên trên ảnh nền */
+.bento-card--small > * {
+  position: relative;
+  z-index: 2;
+}
+
+.bento-card--small .bento-stat {
+  margin-block-end: auto;
+}
+
+.bento-card--small .bento-stat__badge {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  padding: var(--space-xs) var(--space-md);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-full);
+}
+
+.bento-card--small .bento-card__title {
+  color: #ffffff;
+}
+
+.bento-card--small .bento-card__text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Thẻ 4: Rộng ngang (Chiếm 2 cột) */
+.bento-card--wide {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.bento-card--wide .bento-card__content {
+  flex: 1.2;
+}
+
+.bento-card--wide .bento-card__img-wrapper {
+  flex: 1;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Phần tử con bên trong thẻ */
+.bento-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-base);
+}
+
+.bento-card:hover .bento-card__img {
+  transform: scale(1.05);
+}
+
+.bento-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-primary-dark);
+  margin-block-end: var(--space-xs);
+}
+
+.bento-card__title {
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+  margin-block-end: var(--space-sm);
+  color: var(--color-text);
+  line-height: 1.35;
+}
+
+.bento-card__text {
+  font-size: var(--fs-small);
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+.bento-btn {
+  display: inline-block;
+  margin-top: var(--space-md);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  transition: transform var(--transition-fast);
+}
+
+.bento-btn:hover {
+  transform: translateX(4px);
+}
+
+/* Responsive cho Bento Grid */
+@media (max-width: 992px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bento-card--tall {
+    grid-row: auto;
+  }
+
+  .bento-card--wide {
+    grid-column: span 2;
+    flex-direction: column;
+  }
+
+  .bento-card--wide .bento-card__img-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 640px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-card--tall,
+  .bento-card--wide {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}

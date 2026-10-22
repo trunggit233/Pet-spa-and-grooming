@@ -1,0 +1,120 @@
+/* ==========================================================================
+   Header Component (Floating & Frosted Glass on scroll)
+   ========================================================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-header);
+  padding-block: var(--space-md);
+  background-color: transparent;
+  transition:
+    background-color var(--transition-base),
+    backdrop-filter var(--transition-base),
+    box-shadow var(--transition-base),
+    padding-block var(--transition-base);
+}
+
+/* Hiệu ứng kính mờ khi bắt đầu cuộn trang */
+.header.header--scrolled {
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-sm);
+  padding-block: var(--space-sm);
+}
+
+.header__logo {
+  font-size: 1.35rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-primary-dark);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.header__menu a:not(.btn) {
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.header__menu a:not(.btn):hover {
+  color: var(--color-primary);
+}
+
+/* Menu Toggle Button (Mobile) */
+.header__menu-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border-radius: var(--radius-sm);
+}
+
+.header__menu-toggle span,
+.header__menu-toggle span::before,
+.header__menu-toggle span::after {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text);
+  position: absolute;
+  left: 8px;
+  transition: transform var(--transition-fast);
+}
+
+.header__menu-toggle span {
+  top: 19px;
+}
+
+.header__menu-toggle span::before {
+  content: "";
+  top: -7px;
+}
+
+.header__menu-toggle span::after {
+  content: "";
+  top: 7px;
+}
+
+/* Responsive Menu cho Mobile */
+@media (max-width: 768px) {
+  .header__menu-toggle {
+    display: block;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-bg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-lg);
+    display: none;
+  }
+
+  .header__nav[data-open="true"] {
+    display: block;
+  }
+
+  .header__menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-md);
+  }
+
+  .header__menu a {
+    display: block;
+    padding-block: var(--space-xs);
+  }
+}

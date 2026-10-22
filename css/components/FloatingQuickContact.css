@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Floating Quick Contact Bar (Dính mép phải màn hình)
+   ========================================================================== */
+
+.floating-contact {
+  position: fixed;
+  right: 22px;
+  bottom: 35px;
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.floating-btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  text-decoration: none;
+}
+
+.floating-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+}
+
+.floating-btn__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 1. Nút Hotline (Có hiệu ứng sóng rung thu hút gọi điện) */
+.floating-btn--phone {
+  background-color: #e74c3c;
+  animation: pulsePhone 2.2s infinite;
+}
+
+@keyframes pulsePhone {
+  0% {
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(231, 76, 60, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+  }
+}
+
+/* 2. Nút Zalo */
+.floating-btn--zalo {
+  background-color: #0068ff;
+}
+
+.floating-btn__zalo-text {
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* 3. Nút Messenger */
+.floating-btn--messenger {
+  background: linear-gradient(135deg, #00b2fe 0%, #006aff 50%, #9a0fe0 100%);
+}
+
+/* 4. Nút Google Maps */
+.floating-btn--map {
+  background-color: #ea4335;
+}
+
+/* --- Nhãn Tooltip Trượt Ra Khi Rê Chuột --- */
+.floating-btn__tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: rgba(30, 39, 46, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* Mũi tên nhỏ trỏ vào nút tròn */
+.floating-btn__tooltip::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: rgba(30, 39, 46, 0.94);
+}
+
+.floating-btn:hover .floating-btn__tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Tắt tooltip trên điện thoại để tránh che màn hình */
+@media (max-width: 768px) {
+  .floating-contact {
+    right: 16px;
+    bottom: 24px;
+    gap: 10px;
+  }
+
+  .floating-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .floating-btn__tooltip {
+    display: none;
+  }
+}

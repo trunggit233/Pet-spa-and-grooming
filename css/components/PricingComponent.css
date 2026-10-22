@@ -1,0 +1,268 @@
+/* ==========================================================================
+   Pricing Component (2x2 Card Grid Style with Rounded Price Ribbon)
+   ========================================================================== */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2xl);
+}
+
+.pricing-card {
+  background-color: var(--color-bg);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* --- Thẻ 1: Intro Card (Cover Tone Nâu Ấm) --- */
+.pricing-card--intro {
+  background: linear-gradient(145deg, #7a584a, #5c4033);
+  color: #ffffff;
+  padding: var(--space-2xl);
+  border: none;
+}
+
+.pricing-card__intro-header {
+  text-align: center;
+}
+
+.intro-pill {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #d97706;
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: var(--fw-extra-bold);
+  letter-spacing: 0.04em;
+  padding: 6px var(--space-2xl);
+  border-radius: var(--radius-full);
+  margin-block-end: var(--space-xs);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.intro-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: var(--fw-medium);
+}
+
+.pricing-card__intro-media {
+  margin-block: var(--space-md);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 11;
+}
+
+.pricing-intro-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.pricing-card--intro:hover .pricing-intro-img {
+  transform: scale(1.05);
+}
+
+.pricing-intro-btn {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: var(--fw-bold);
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.pricing-intro-btn:hover {
+  background: #ffffff;
+  color: #5c4033;
+  transform: translateY(-2px);
+}
+
+.pricing-intro-btn .arrow-icon {
+  font-size: 1.25rem;
+  transition: transform var(--transition-fast);
+}
+
+.pricing-intro-btn:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+/* --- Thẻ 2, 3, 4: Gói Dịch Vụ --- */
+.pricing-card__head {
+  padding: var(--space-xl) var(--space-xl) var(--space-sm);
+}
+
+.pricing-card__title-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.pricing-card__title {
+  font-size: 1.4rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  line-height: 1.25;
+}
+
+.paw-icon {
+  font-size: 1.35rem;
+}
+
+.pricing-card__tagline {
+  font-size: 0.85rem;
+  color: #d97706; /* Màu cam nâu ấm giống mẫu */
+  font-weight: var(--fw-bold);
+  margin-top: 3px;
+}
+
+.pricing-card__body {
+  padding: 0 var(--space-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-md);
+  flex: 1;
+}
+
+.pricing-card__info {
+  flex: 1;
+}
+
+.pricing-card__includes-label {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  margin-block-end: var(--space-xs);
+}
+
+.pricing-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+.pricing-card__list li {
+  position: relative;
+  padding-left: 14px;
+  line-height: 1.45;
+}
+
+.pricing-card__list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #d97706;
+  font-weight: bold;
+}
+
+/* Khung tròn chứa ảnh bé cún ở góc phải */
+.pricing-card__pet-badge {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 4px solid var(--color-bg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-xs);
+  flex-shrink: 0;
+}
+
+.pricing-pet-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.pricing-card:hover .pricing-pet-img {
+  transform: scale(1.08);
+}
+
+/* Footer & Ribbon Giá Tiền Kiểu Bo Tròn Nâu Ấm */
+.pricing-card__footer {
+  padding: var(--space-md) var(--space-xl) var(--space-xl);
+}
+
+.pricing-badge {
+  background-color: #845a46; /* Màu nâu ấm chuẩn ảnh mẫu */
+  color: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 10px var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  box-shadow: 0 4px 14px rgba(132, 90, 70, 0.25);
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.pricing-card:hover .pricing-badge {
+  background-color: #6e4937;
+  transform: scale(1.02);
+}
+
+.pricing-badge--featured {
+  background: linear-gradient(135deg, #a85a3a, #845a46);
+  box-shadow: 0 4px 14px rgba(168, 90, 58, 0.35);
+}
+
+.pricing-badge__sub {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.pricing-badge__price {
+  font-size: 1.45rem;
+  font-weight: var(--fw-extra-bold);
+  letter-spacing: 0.02em;
+}
+
+/* Responsive cho Bảng Giá */
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-card__body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pricing-card__pet-badge {
+    align-self: center;
+    margin-top: var(--space-md);
+  }
+}
