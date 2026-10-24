@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Scroll Animations — Intersection Observer based
-   ========================================================================== */
-
 export function initScrollAnimations() {
   const animatedElements = document.querySelectorAll(
     '.animate-on-scroll, .animate-stagger'
@@ -14,7 +10,7 @@ export function initScrollAnimations() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target); // Animate once
+          observer.unobserve(entry.target);
         }
       });
     },
@@ -26,4 +22,3 @@ export function initScrollAnimations() {
 
   animatedElements.forEach((el) => observer.observe(el));
 }
-

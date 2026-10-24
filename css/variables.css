@@ -1,10 +1,4 @@
-/* ==========================================================================
-   Design Tokens — Pet Spa & Grooming
-   Cập nhật khi có brand guideline từ khách hàng
-   ========================================================================== */
-
 :root {
-  /* --- Colors (placeholder — sẽ cập nhật theo brand) --- */
   --color-primary: #6C63FF;
   --color-primary-light: #8B83FF;
   --color-primary-dark: #4A42D4;
@@ -23,7 +17,6 @@
   --color-success: #00B894;
   --color-error: #E17055;
 
-  /* --- Typography --- */
   --font-heading: 'Nunito', system-ui, sans-serif;
   --font-body: 'Open Sans', system-ui, sans-serif;
 
@@ -40,7 +33,6 @@
 
   --line-height: 1.6;
 
-  /* --- Spacing --- */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
@@ -50,31 +42,25 @@
   --space-3xl: 4rem;
   --space-4xl: 6rem;
 
-  /* --- Layout --- */
   --container-max: 1200px;
   --container-padding: var(--space-lg);
 
-  /* --- Border Radius --- */
   --radius-sm: 0.375rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
   --radius-full: 9999px;
 
-  /* --- Shadows --- */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
   --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
 
-  /* --- Transitions --- */
   --transition-fast: 150ms ease;
   --transition-base: 300ms ease;
   --transition-slow: 500ms ease;
 
-  /* --- Z-Index Scale --- */
   --z-header: 100;
   --z-overlay: 200;
   --z-modal: 300;
 }
-

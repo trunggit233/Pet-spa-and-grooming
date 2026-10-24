@@ -1,8 +1,3 @@
-/* ==========================================================================
-   Animations — Scroll-driven & Transitions
-   ========================================================================== */
-
-/* --- Fade In (triggered by Intersection Observer) --- */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -14,7 +9,6 @@
   transform: translateY(0);
 }
 
-/* --- Staggered animation for grid children --- */
 .animate-stagger > * {
   opacity: 0;
   transform: translateY(20px);
@@ -31,7 +25,6 @@
   transform: translateY(0);
 }
 
-/* --- Respect reduced motion --- */
 @media (prefers-reduced-motion: reduce) {
   .animate-on-scroll,
   .animate-stagger > * {
@@ -40,4 +33,3 @@
     transition: none;
   }
 }
-

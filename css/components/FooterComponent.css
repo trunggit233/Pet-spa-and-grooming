@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Footer Component with Integrated Google Maps
-   ========================================================================== */
-
 .footer {
   background-color: var(--color-bg-dark);
   color: #ffffff;
@@ -16,7 +12,6 @@
   margin-block-end: var(--space-3xl);
 }
 
-/* --- Cột 1: Thương hiệu --- */
 .footer__logo {
   font-size: 1.4rem;
   font-weight: var(--fw-bold);
@@ -57,7 +52,6 @@
   transform: translateY(-2px);
 }
 
-/* --- Tiêu Đề Cột --- */
 .footer__heading {
   font-size: 1.1rem;
   font-weight: var(--fw-bold);
@@ -78,7 +72,6 @@
   border-radius: var(--radius-full);
 }
 
-/* --- Cột 2: Liên kết nhanh --- */
 .footer__links {
   display: flex;
   flex-direction: column;
@@ -99,7 +92,6 @@
   padding-left: 6px;
 }
 
-/* --- Cột 3: Giờ làm việc & Liên hệ --- */
 .footer__contact-info {
   display: flex;
   flex-direction: column;
@@ -136,7 +128,6 @@
   font-weight: var(--fw-bold);
 }
 
-/* --- Cột 4: Google Maps Tích Hợp --- */
 .footer__map-col {
   display: flex;
   flex-direction: column;
@@ -181,7 +172,6 @@
   font-size: 0.9rem;
 }
 
-/* --- Dòng Bản Quyền Cuối Cùng (Bottom Bar) --- */
 .footer__bottom {
   padding-top: var(--space-xl);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -199,7 +189,6 @@
   font-style: italic;
 }
 
-/* Responsive cho Footer */
 @media (max-width: 1024px) {
   .footer__grid {
     grid-template-columns: repeat(2, 1fr);

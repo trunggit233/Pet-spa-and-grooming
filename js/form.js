@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Form — Validation & Submission
-   ========================================================================== */
-
 export function initForm() {
   const bookingForm = document.querySelector('.booking-form');
 
@@ -15,14 +11,10 @@ export function initForm() {
       return;
     }
 
-    // Collect form data
     const formData = new FormData(bookingForm);
     const data = Object.fromEntries(formData.entries());
 
-    // TODO: Gửi data tới backend/API
     console.log('Booking submitted:', data);
-
-    // Show success message (placeholder)
     showSuccessMessage(bookingForm);
   });
 }
@@ -37,4 +29,3 @@ function showSuccessMessage(form) {
 
   form.replaceWith(successEl);
 }
-

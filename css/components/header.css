@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Header Component (Floating & Frosted Glass on scroll)
-   ========================================================================== */
-
 .header {
   position: fixed;
   top: 0;
@@ -17,7 +13,6 @@
     padding-block var(--transition-base);
 }
 
-/* Hiệu ứng kính mờ khi bắt đầu cuộn trang */
 .header.header--scrolled {
   background-color: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(16px);
@@ -51,7 +46,6 @@
   color: var(--color-primary);
 }
 
-/* Menu Toggle Button (Mobile) */
 .header__menu-toggle {
   display: none;
   width: 40px;
@@ -86,7 +80,6 @@
   top: 7px;
 }
 
-/* Responsive Menu cho Mobile */
 @media (max-width: 768px) {
   .header__menu-toggle {
     display: block;

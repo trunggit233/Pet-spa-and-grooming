@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Services Component (Direction 1: Icon Cards with Checklists)
-   ========================================================================== */
-
 .service-card {
   background-color: var(--color-bg);
   border-radius: var(--radius-lg);
@@ -22,7 +18,6 @@
   border-color: var(--color-primary-light);
 }
 
-/* Khung bọc ảnh dịch vụ */
 .service-card__img-wrapper {
   width: 100%;
   aspect-ratio: 16 / 11;
@@ -32,7 +27,6 @@
   background-color: var(--color-bg-alt);
 }
 
-/* Ảnh dịch vụ có hiệu ứng zoom nhẹ khi hover */
 .service-card__img {
   width: 100%;
   height: 100%;
@@ -59,7 +53,6 @@
   margin-block-end: var(--space-lg);
 }
 
-/* Danh sách checklist nhỏ chốt hạ ở đáy thẻ */
 .service-card__features {
   margin-top: auto;
   padding-top: var(--space-md);

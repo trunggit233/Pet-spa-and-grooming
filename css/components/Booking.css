@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Booking & Pet Profile Component (Split Card with Segmented Controls)
-   ========================================================================== */
-
 .booking-wrapper {
   background-color: var(--color-bg);
   border-radius: var(--radius-xl);
@@ -14,7 +10,6 @@
   margin-inline: auto;
 }
 
-/* --- Cột Trái: Sidebar Thông Tin & Ảnh Tiệm --- */
 .booking-sidebar {
   background-color: var(--color-bg-alt);
   border-right: 1px solid var(--color-border);
@@ -32,6 +27,21 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.booking-sidebar__overlay-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(29, 36, 44, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: var(--fw-bold);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .booking-sidebar__info {
@@ -84,7 +94,17 @@
   font-weight: var(--fw-bold);
 }
 
-/* --- Cột Phải: Form Tương Tác Hồ Sơ Bé Cưng --- */
+.booking-sidebar__reassurance {
+  margin-top: auto;
+  padding: var(--space-md);
+  background: rgba(0, 184, 148, 0.08);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-success);
+  font-size: 0.8rem;
+  color: var(--color-text);
+  line-height: 1.45;
+}
+
 .booking-form-area {
   padding: var(--space-2xl);
   display: flex;
@@ -156,7 +176,6 @@
   box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
 }
 
-/* --- Nút Bấm Viên Thuốc (Radio Pill Segmented Controls) --- */
 .radio-pill-group {
   display: flex;
   flex-wrap: wrap;
@@ -197,7 +216,6 @@
   background-color: rgba(108, 99, 255, 0.05);
 }
 
-/* Trạng thái được chọn (Active Radio) */
 .radio-pill input[type="radio"]:checked + .pill-btn {
   background-color: var(--color-primary);
   color: #ffffff;
@@ -206,7 +224,6 @@
   font-weight: var(--fw-bold);
 }
 
-/* Nút Submit */
 .booking-submit-btn {
   width: 100%;
   padding: 14px;
@@ -216,7 +233,6 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Thông Báo Thành Công */
 .form-success {
   background: rgba(0, 184, 148, 0.1);
   border: 1.5px solid var(--color-success);
@@ -227,7 +243,6 @@
   font-weight: var(--fw-medium);
 }
 
-/* Responsive cho Form Đặt Lịch */
 @media (max-width: 992px) {
   .booking-wrapper {
     grid-template-columns: 1fr;

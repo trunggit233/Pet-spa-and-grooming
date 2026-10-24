@@ -1,0 +1,8 @@
+services:
+  petspa-landing:
+    build: .
+    container_name: petspa_landing
+    restart: always
+    ports:
+      - "80:80"
+

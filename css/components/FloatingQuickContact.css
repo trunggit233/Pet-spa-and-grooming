@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Floating Quick Contact Bar (Dính mép phải màn hình)
-   ========================================================================== */
-
 .floating-contact {
   position: fixed;
   right: 22px;
@@ -39,7 +35,6 @@
   justify-content: center;
 }
 
-/* 1. Nút Hotline (Có hiệu ứng sóng rung thu hút gọi điện) */
 .floating-btn--phone {
   background-color: #e74c3c;
   animation: pulsePhone 2.2s infinite;
@@ -57,7 +52,6 @@
   }
 }
 
-/* 2. Nút Zalo */
 .floating-btn--zalo {
   background-color: #0068ff;
 }
@@ -69,17 +63,14 @@
   letter-spacing: -0.02em;
 }
 
-/* 3. Nút Messenger */
 .floating-btn--messenger {
   background: linear-gradient(135deg, #00b2fe 0%, #006aff 50%, #9a0fe0 100%);
 }
 
-/* 4. Nút Google Maps */
 .floating-btn--map {
   background-color: #ea4335;
 }
 
-/* --- Nhãn Tooltip Trượt Ra Khi Rê Chuột --- */
 .floating-btn__tooltip {
   position: absolute;
   right: calc(100% + 12px);
@@ -102,7 +93,6 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
 }
 
-/* Mũi tên nhỏ trỏ vào nút tròn */
 .floating-btn__tooltip::after {
   content: "";
   position: absolute;
@@ -118,7 +108,6 @@
   transform: translateY(-50%) translateX(0);
 }
 
-/* Tắt tooltip trên điện thoại để tránh che màn hình */
 @media (max-width: 768px) {
   .floating-contact {
     right: 16px;

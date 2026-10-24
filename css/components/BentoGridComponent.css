@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Bento Grid Component (Why Us Section)
-   ========================================================================== */
-
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -28,7 +24,6 @@
   background-color: var(--color-bg);
 }
 
-/* Thẻ 1: Cao 2 hàng dọc */
 .bento-card--tall {
   grid-row: span 2;
   justify-content: space-between;
@@ -41,7 +36,6 @@
   margin-block-end: var(--space-lg);
 }
 
-/* Thẻ 2: Trung bình giữa trên */
 .bento-card--medium .bento-card__img-wrapper {
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-md);
@@ -49,7 +43,6 @@
   margin-block-end: var(--space-md);
 }
 
-/* Thẻ 3: Nhỏ với nền background ảnh thảo mộc organic & overlay */
 .bento-card--small {
   position: relative;
   overflow: hidden;
@@ -58,7 +51,6 @@
   border-color: rgba(0, 184, 148, 0.2);
 }
 
-/* Lớp nền ảnh có phủ gradient mờ tối để chữ luôn sắc nét */
 .bento-card--small::before {
   content: "";
   position: absolute;
@@ -75,12 +67,10 @@
   transition: transform var(--transition-base);
 }
 
-/* Hiệu ứng zoom ảnh nền khi hover */
 .bento-card--small:hover::before {
   transform: scale(1.08);
 }
 
-/* Giữ nội dung chữ và badge luôn nổi lên trên ảnh nền */
 .bento-card--small > * {
   position: relative;
   z-index: 2;
@@ -110,7 +100,6 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Thẻ 4: Rộng ngang (Chiếm 2 cột) */
 .bento-card--wide {
   grid-column: span 2;
   flex-direction: row;
@@ -129,7 +118,6 @@
   overflow: hidden;
 }
 
-/* Phần tử con bên trong thẻ */
 .bento-card__img {
   width: 100%;
   height: 100%;
@@ -177,7 +165,6 @@
   transform: translateX(4px);
 }
 
-/* Responsive cho Bento Grid */
 @media (max-width: 992px) {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);

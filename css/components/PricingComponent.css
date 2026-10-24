@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Pricing Component (2x2 Card Grid Style with Rounded Price Ribbon)
-   ========================================================================== */
-
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -28,7 +24,6 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* --- Thẻ 1: Intro Card (Cover Tone Nâu Ấm) --- */
 .pricing-card--intro {
   background: linear-gradient(145deg, #7a584a, #5c4033);
   color: #ffffff;
@@ -111,7 +106,6 @@
   transform: translateX(4px);
 }
 
-/* --- Thẻ 2, 3, 4: Gói Dịch Vụ --- */
 .pricing-card__head {
   padding: var(--space-xl) var(--space-xl) var(--space-sm);
 }
@@ -135,7 +129,7 @@
 
 .pricing-card__tagline {
   font-size: 0.85rem;
-  color: #d97706; /* Màu cam nâu ấm giống mẫu */
+  color: #d97706;
   font-weight: var(--fw-bold);
   margin-top: 3px;
 }
@@ -182,7 +176,6 @@
   font-weight: bold;
 }
 
-/* Khung tròn chứa ảnh bé cún ở góc phải */
 .pricing-card__pet-badge {
   width: 140px;
   height: 140px;
@@ -205,13 +198,12 @@
   transform: scale(1.08);
 }
 
-/* Footer & Ribbon Giá Tiền Kiểu Bo Tròn Nâu Ấm */
 .pricing-card__footer {
   padding: var(--space-md) var(--space-xl) var(--space-xl);
 }
 
 .pricing-badge {
-  background-color: #845a46; /* Màu nâu ấm chuẩn ảnh mẫu */
+  background-color: #845a46;
   color: #ffffff;
   border-radius: var(--radius-xl);
   padding: 10px var(--space-xl);
@@ -246,7 +238,6 @@
   letter-spacing: 0.02em;
 }
 
-/* Responsive cho Bảng Giá */
 @media (max-width: 900px) {
   .pricing-grid {
     grid-template-columns: 1fr;

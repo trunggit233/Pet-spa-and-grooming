@@ -1,6 +1,3 @@
-/* ==========================================================================
-   MAIN CSS — Tổng hợp tất cả file CSS theo đúng thứ tự
-   ========================================================================== */
 @import url(./components/Buttons.css);
 @import url(./components/header.css);
 @import url(./components/HeroComponent.css);
