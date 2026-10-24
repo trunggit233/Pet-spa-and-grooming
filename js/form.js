@@ -3,6 +3,29 @@ const TELEGRAM_CONFIG = {
   chatId: "6085897240",
 };
 
+const GOOGLE_SHEET_URL =
+  "https://script.google.com/macros/s/AKfycbwUYNetLdKO8c93aYq_T7id7voQGESoBYru282h_FJIwFlf9hN4cb356yzB_--IJDMB-A/exec";
+
+const WEIGHT_LABELS = {
+  "under-5kg": "< 5 kg",
+  "5-10kg": "5 – 10 kg",
+  "10-20kg": "10 – 20 kg",
+  "over-20kg": "> 20 kg",
+};
+
+const PERSONALITY_LABELS = {
+  shy: "Nhút nhát / Sợ người lạ",
+  energetic: "Tăng động, thích đùa",
+  calm: "Ngoan, hợp tác",
+};
+
+const SERVICE_LABELS = {
+  hygiene: "Vệ Sinh Tiêu Chuẩn",
+  "full-grooming": "Cắt Tỉa Toàn Diện",
+  "spa-recovery": "Spa Phục Hồi Lông",
+  consult: "Cần tư vấn gói phù hợp",
+};
+
 export function initForm() {
   const bookingForm = document.querySelector(".booking-form");
 
@@ -28,7 +51,7 @@ export function initForm() {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      await sendToTelegram(data);
+      await Promise.all([sendToTelegram(data), sendToGoogleSheet(data)]);
       showSuccessMessage(bookingForm);
     } catch (error) {
       console.error(error);
@@ -50,26 +73,6 @@ async function sendToTelegram(data) {
 
   const petTypeLabel = data.petType === "cat" ? "🐈 Mèo" : "🐕 Chó";
 
-  const weightLabels = {
-    "under-5kg": "< 5 kg",
-    "5-10kg": "5 – 10 kg",
-    "10-20kg": "10 – 20 kg",
-    "over-20kg": "> 20 kg",
-  };
-
-  const personalityLabels = {
-    shy: "Nhút nhát / Sợ người lạ",
-    energetic: "Tăng động, thích đùa",
-    calm: "Ngoan, hợp tác",
-  };
-
-  const serviceLabels = {
-    hygiene: "Vệ Sinh Tiêu Chuẩn",
-    "full-grooming": "Cắt Tỉa Toàn Diện",
-    "spa-recovery": "Spa Phục Hồi Lông",
-    consult: "Cần tư vấn gói phù hợp",
-  };
-
   const message = [
     "🐾 <b>ĐƠN ĐẶT LỊCH CHĂM SÓC MỚI</b> 🐾",
     "━━━━━━━━━━━━━━━━━━━━",
@@ -80,11 +83,11 @@ async function sendToTelegram(data) {
     "🐶 <b>Hồ sơ Bé cưng:</b>",
     `• Tên bé: <b>${escapeHtml(data.petName || "Chưa đặt tên")}</b> (${petTypeLabel})`,
     `• Giống loài: ${escapeHtml(data.petBreed || "Chưa rõ")}`,
-    `• Cân nặng: ${weightLabels[data.petWeight] || escapeHtml(data.petWeight || "Chưa chọn")}`,
-    `• Tính cách: <b>${personalityLabels[data.petPersonality] || escapeHtml(data.petPersonality || "Chưa chọn")}</b>`,
+    `• Cân nặng: ${WEIGHT_LABELS[data.petWeight] || escapeHtml(data.petWeight || "Chưa chọn")}`,
+    `• Tính cách: <b>${PERSONALITY_LABELS[data.petPersonality] || escapeHtml(data.petPersonality || "Chưa chọn")}</b>`,
     "",
     "✂️ <b>Dịch vụ & Ghi chú:</b>",
-    `• Gói chọn: <b>${serviceLabels[data.servicePackage] || escapeHtml(data.servicePackage || "Chưa chọn")}</b>`,
+    `• Gói chọn: <b>${SERVICE_LABELS[data.servicePackage] || escapeHtml(data.servicePackage || "Chưa chọn")}</b>`,
     `• Ghi chú: <i>${escapeHtml(data.bookingNote || "Không có")}</i>`,
     "━━━━━━━━━━━━━━━━━━━━",
     `⏰ <i>Thời gian gửi: ${new Date().toLocaleString("vi-VN")}</i>`,
@@ -108,6 +111,34 @@ async function sendToTelegram(data) {
       `Telegram API Error: ${response.status} - ${errorData.description || response.statusText}`,
     );
   }
+}
+
+async function sendToGoogleSheet(data) {
+  if (!GOOGLE_SHEET_URL) {
+    return;
+  }
+
+  const payload = {
+    submittedAt: new Date().toLocaleString("vi-VN"),
+    ownerName: data.ownerName || "",
+    ownerPhone: data.ownerPhone || "",
+    petName: data.petName || "",
+    petType: data.petType === "cat" ? "Mèo" : "Chó",
+    petBreed: data.petBreed || "",
+    petWeight: WEIGHT_LABELS[data.petWeight] || data.petWeight || "",
+    petPersonality:
+      PERSONALITY_LABELS[data.petPersonality] || data.petPersonality || "",
+    servicePackage:
+      SERVICE_LABELS[data.servicePackage] || data.servicePackage || "",
+    bookingNote: data.bookingNote || "",
+  };
+
+  await fetch(GOOGLE_SHEET_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload),
+  });
 }
 
 function escapeHtml(text) {
