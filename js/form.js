@@ -44,11 +44,7 @@ export function initForm() {
 }
 
 async function sendToTelegram(data) {
-  if (
-    TELEGRAM_CONFIG.token ===
-      "8652270861:AAF4LjwMdisXpJNspr-yVfufA2z93gm0n0A" ||
-    TELEGRAM_CONFIG.chatId === "6085897240"
-  ) {
+  if (!TELEGRAM_CONFIG.token || !TELEGRAM_CONFIG.chatId) {
     return;
   }
 
@@ -79,16 +75,16 @@ async function sendToTelegram(data) {
     "━━━━━━━━━━━━━━━━━━━━",
     "👤 <b>Thông tin Sen:</b>",
     `• Họ tên: <b>${escapeHtml(data.ownerName || "Chưa cung cấp")}</b>`,
-    `• SĐT: <a href="tel:${data.ownerPhone}">${data.ownerPhone}</a>`,
+    `• SĐT: <a href="tel:${escapeHtml(data.ownerPhone || "")}">${escapeHtml(data.ownerPhone || "Chưa cung cấp")}</a>`,
     "",
     "🐶 <b>Hồ sơ Bé cưng:</b>",
     `• Tên bé: <b>${escapeHtml(data.petName || "Chưa đặt tên")}</b> (${petTypeLabel})`,
     `• Giống loài: ${escapeHtml(data.petBreed || "Chưa rõ")}`,
-    `• Cân nặng: ${weightLabels[data.petWeight] || data.petWeight}`,
-    `• Tính cách: <b>${personalityLabels[data.petPersonality] || data.petPersonality}</b>`,
+    `• Cân nặng: ${weightLabels[data.petWeight] || escapeHtml(data.petWeight || "Chưa chọn")}`,
+    `• Tính cách: <b>${personalityLabels[data.petPersonality] || escapeHtml(data.petPersonality || "Chưa chọn")}</b>`,
     "",
     "✂️ <b>Dịch vụ & Ghi chú:</b>",
-    `• Gói chọn: <b>${serviceLabels[data.servicePackage] || data.servicePackage}</b>`,
+    `• Gói chọn: <b>${serviceLabels[data.servicePackage] || escapeHtml(data.servicePackage || "Chưa chọn")}</b>`,
     `• Ghi chú: <i>${escapeHtml(data.bookingNote || "Không có")}</i>`,
     "━━━━━━━━━━━━━━━━━━━━",
     `⏰ <i>Thời gian gửi: ${new Date().toLocaleString("vi-VN")}</i>`,
@@ -107,7 +103,10 @@ async function sendToTelegram(data) {
   });
 
   if (!response.ok) {
-    throw new Error(`Telegram API Error: ${response.statusText}`);
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(
+      `Telegram API Error: ${response.status} - ${errorData.description || response.statusText}`,
+    );
   }
 }
 
