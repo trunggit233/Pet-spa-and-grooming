@@ -130,14 +130,6 @@
   transform: scale(1.05);
 }
 
-.bento-tag {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: var(--fw-bold);
-  color: var(--color-primary-dark);
-  margin-block-end: var(--space-xs);
-}
-
 .bento-card__title {
   font-size: 1.25rem;
   font-weight: var(--fw-bold);
